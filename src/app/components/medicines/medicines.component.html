@@ -1,0 +1,6 @@
+<app-search-bar (searchChanged)="filterMedicines($event)"></app-search-bar>
+
+<mat-list *ngFor="let list of filteredMedicines; let last = last">
+    <span>Nom : {{ list.name }} | Dose : {{ list.dose }} | {{ list.type }} | Prix : {{ list.prix }} | Effet indésirable : {{ list.effetindesirable }}</span>
+    <mat-divider *ngIf="!last"></mat-divider>  
+</mat-list>

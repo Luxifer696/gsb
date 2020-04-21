@@ -1,0 +1,14 @@
+<app-search-bar (searchChanged)="filterDoctors($event)"></app-search-bar>
+
+<mat-list *ngFor="let list of filteredDoctors; let last = last">
+        <span>Nom : {{ list.name }} | Prénom : {{ list.firstname }}</span>
+        <mat-divider *ngIf="!last"></mat-divider>  
+</mat-list>
+
+<!-- Le paginateur -->
+<!-- Au changement de page ou de taille du paginateur la méthode pageChange est appelée --><!--
+<mat-paginator  [length]="paginatorInfo.length"
+[pageIndex]="paginatorInfo.pageIndex"
+[pageSize]="paginatorInfo.pageSize" 
+[pageSizeOptions]="[5, 10]"
+(page)="pageChange($event)"></mat-paginator>-->
